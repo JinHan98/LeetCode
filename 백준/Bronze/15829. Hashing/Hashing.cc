@@ -4,24 +4,20 @@
 using namespace std;
 long long pow_1(int a, int b);
 int main(){
+    ios_base :: sync_with_stdio(false); 
+    cin.tie(NULL); 
+    cout.tie(NULL);
     int len;
     string a;
     cin>>len;
     cin>>a;
+    long long num=1;
     unsigned long long ans=0;
     for(int i=0;i<a.size();i++){
-        ans+=((a[i]-'a'+1)*(pow_1(31,i)));
+        ans+=(a[i]-'a'+1)*num;
+        num*=31;
+        num%=1234567891;
         ans%=1234567891;
     }
     cout<<ans;
-}
-long long pow_1(int a, int b){
-    long long ans=1;
-    if(b==0)
-        return 1;
-    for(int i=0;i<b;i++){
-        ans*=a;
-        a%=1234567891;
-    }
-    return ans;
 }
