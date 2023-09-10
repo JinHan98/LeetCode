@@ -6,9 +6,10 @@
 #include <cmath>
 #include <map>
 #include <set>
+#include <unordered_map>
 using namespace std;
 int N,M;
-map<string,string> password;
+unordered_map<string,string> password;
 set<int> val[101];
 int main(){
     ios_base :: sync_with_stdio(false); 
